@@ -12,8 +12,26 @@
 		A80A30391C737A8900DE996D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A80A30371C737A8900DE996D /* Main.storyboard */; };
 		A80A303B1C737A8900DE996D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80A303A1C737A8900DE996D /* Assets.xcassets */; };
 		A80A303E1C737A8900DE996D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A80A303C1C737A8900DE996D /* LaunchScreen.storyboard */; };
+		A80A30501C7385EC00DE996D /* chatengieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A304F1C7385EC00DE996D /* chatengieTests.swift */; };
+		A80A305A1C73983F00DE996D /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A30591C73983F00DE996D /* models.swift */; };
+		A80A305D1C739BCC00DE996D /* ChatApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A305C1C739BCC00DE996D /* ChatApiProtocol.swift */; };
+		A80A305F1C739BDC00DE996D /* EngieApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A305E1C739BDC00DE996D /* EngieApiClient.swift */; };
+		A80A30611C739C3F00DE996D /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A30601C739C3F00DE996D /* Errors.swift */; };
+		A80A30621C73A96C00DE996D /* EngieApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A305E1C739BDC00DE996D /* EngieApiClient.swift */; };
+		A80A30631C73A97500DE996D /* ChatApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A305C1C739BCC00DE996D /* ChatApiProtocol.swift */; };
+		A80A30641C73A97900DE996D /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A30601C739C3F00DE996D /* Errors.swift */; };
 		DE940447D02E3DE3935BFD86 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A273EDE1AE49088436A46FC7 /* Pods.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A80A30521C7385EC00DE996D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A80A30281C737A8900DE996D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A80A302F1C737A8900DE996D;
+			remoteInfo = chatengie;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A273EDE1AE49088436A46FC7 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +42,13 @@
 		A80A303A1C737A8900DE996D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A80A303D1C737A8900DE996D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A80A303F1C737A8900DE996D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A80A304D1C7385EC00DE996D /* chatengieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chatengieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A80A304F1C7385EC00DE996D /* chatengieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatengieTests.swift; sourceTree = "<group>"; };
+		A80A30511C7385EC00DE996D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A80A30591C73983F00DE996D /* models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
+		A80A305C1C739BCC00DE996D /* ChatApiProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatApiProtocol.swift; sourceTree = "<group>"; };
+		A80A305E1C739BDC00DE996D /* EngieApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngieApiClient.swift; sourceTree = "<group>"; };
+		A80A30601C739C3F00DE996D /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		C9263FA206B99300AAAF9CD0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D157C26C1031F725BA6A7658 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -34,6 +59,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE940447D02E3DE3935BFD86 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80A304A1C7385EC00DE996D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				A80A30321C737A8900DE996D /* chatengie */,
+				A80A304E1C7385EC00DE996D /* chatengieTests */,
 				A80A30311C737A8900DE996D /* Products */,
 				60DA2B22B16A3FCCBCCC585E /* Pods */,
 				02FF381F88686C4A0AEA5071 /* Frameworks */,
@@ -71,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				A80A30301C737A8900DE996D /* chatengie.app */,
+				A80A304D1C7385EC00DE996D /* chatengieTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,6 +112,8 @@
 		A80A30321C737A8900DE996D /* chatengie */ = {
 			isa = PBXGroup;
 			children = (
+				A80A30461C737C0E00DE996D /* Business */,
+				A80A30451C737C0800DE996D /* Presentation */,
 				A80A30331C737A8900DE996D /* AppDelegate.swift */,
 				A80A30351C737A8900DE996D /* ViewController.swift */,
 				A80A30371C737A8900DE996D /* Main.storyboard */,
@@ -86,6 +122,41 @@
 				A80A303F1C737A8900DE996D /* Info.plist */,
 			);
 			path = chatengie;
+			sourceTree = "<group>";
+		};
+		A80A30451C737C0800DE996D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Presentation;
+			sourceTree = "<group>";
+		};
+		A80A30461C737C0E00DE996D /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				A80A305B1C739BC200DE996D /* api */,
+				A80A30591C73983F00DE996D /* models.swift */,
+			);
+			name = Business;
+			sourceTree = "<group>";
+		};
+		A80A304E1C7385EC00DE996D /* chatengieTests */ = {
+			isa = PBXGroup;
+			children = (
+				A80A304F1C7385EC00DE996D /* chatengieTests.swift */,
+				A80A30511C7385EC00DE996D /* Info.plist */,
+			);
+			path = chatengieTests;
+			sourceTree = "<group>";
+		};
+		A80A305B1C739BC200DE996D /* api */ = {
+			isa = PBXGroup;
+			children = (
+				A80A305C1C739BCC00DE996D /* ChatApiProtocol.swift */,
+				A80A305E1C739BDC00DE996D /* EngieApiClient.swift */,
+				A80A30601C739C3F00DE996D /* Errors.swift */,
+			);
+			name = api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,6 +182,24 @@
 			productReference = A80A30301C737A8900DE996D /* chatengie.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A80A304C1C7385EC00DE996D /* chatengieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A80A30541C7385EC00DE996D /* Build configuration list for PBXNativeTarget "chatengieTests" */;
+			buildPhases = (
+				A80A30491C7385EC00DE996D /* Sources */,
+				A80A304A1C7385EC00DE996D /* Frameworks */,
+				A80A304B1C7385EC00DE996D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A80A30531C7385EC00DE996D /* PBXTargetDependency */,
+			);
+			name = chatengieTests;
+			productName = chatengieTests;
+			productReference = A80A304D1C7385EC00DE996D /* chatengieTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -123,6 +212,10 @@
 				TargetAttributes = {
 					A80A302F1C737A8900DE996D = {
 						CreatedOnToolsVersion = 7.2.1;
+					};
+					A80A304C1C7385EC00DE996D = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = A80A302F1C737A8900DE996D;
 					};
 				};
 			};
@@ -140,6 +233,7 @@
 			projectRoot = "";
 			targets = (
 				A80A302F1C737A8900DE996D /* chatengie */,
+				A80A304C1C7385EC00DE996D /* chatengieTests */,
 			);
 		};
 /* End PBXProject section */
@@ -152,6 +246,13 @@
 				A80A303E1C737A8900DE996D /* LaunchScreen.storyboard in Resources */,
 				A80A303B1C737A8900DE996D /* Assets.xcassets in Resources */,
 				A80A30391C737A8900DE996D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80A304B1C7385EC00DE996D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,12 +311,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80A305F1C739BDC00DE996D /* EngieApiClient.swift in Sources */,
 				A80A30361C737A8900DE996D /* ViewController.swift in Sources */,
 				A80A30341C737A8900DE996D /* AppDelegate.swift in Sources */,
+				A80A305D1C739BCC00DE996D /* ChatApiProtocol.swift in Sources */,
+				A80A305A1C73983F00DE996D /* models.swift in Sources */,
+				A80A30611C739C3F00DE996D /* Errors.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80A30491C7385EC00DE996D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A80A30641C73A97900DE996D /* Errors.swift in Sources */,
+				A80A30621C73A96C00DE996D /* EngieApiClient.swift in Sources */,
+				A80A30631C73A97500DE996D /* ChatApiProtocol.swift in Sources */,
+				A80A30501C7385EC00DE996D /* chatengieTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A80A30531C7385EC00DE996D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A80A302F1C737A8900DE996D /* chatengie */;
+			targetProxy = A80A30521C7385EC00DE996D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A80A30371C737A8900DE996D /* Main.storyboard */ = {
@@ -344,6 +468,30 @@
 			};
 			name = Release;
 		};
+		A80A30551C7385EC00DE996D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = chatengieTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.engie.chatengieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/chatengie.app/chatengie";
+			};
+			name = Debug;
+		};
+		A80A30561C7385EC00DE996D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = chatengieTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.engie.chatengieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/chatengie.app/chatengie";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -361,6 +509,15 @@
 			buildConfigurations = (
 				A80A30431C737A8900DE996D /* Debug */,
 				A80A30441C737A8900DE996D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A80A30541C7385EC00DE996D /* Build configuration list for PBXNativeTarget "chatengieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A80A30551C7385EC00DE996D /* Debug */,
+				A80A30561C7385EC00DE996D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
