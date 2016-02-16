@@ -20,16 +20,19 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (3.0.2):
     - PromiseKit/CorePromise
+  - SwiftSpinner (0.8.0)
 
 DEPENDENCIES:
   - Alamofire (~> 3.2.0)
   - ModelRocket (~> 1.2.4)
   - PromiseKit (~> 3.0.2)
+  - SwiftSpinner (~> 0.8.0)
 
 SPEC CHECKSUMS:
   Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
   ModelRocket: 1481d2d111b081cbdc9efafde5d1fe6909863b46
   OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
   PromiseKit: ab1a380f7a30cf8cce663a2411e8b3580b10313d
+  SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
 
 COCOAPODS: 0.39.0

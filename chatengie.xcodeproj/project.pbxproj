@@ -13,13 +13,23 @@
 		A80A303B1C737A8900DE996D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80A303A1C737A8900DE996D /* Assets.xcassets */; };
 		A80A303E1C737A8900DE996D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A80A303C1C737A8900DE996D /* LaunchScreen.storyboard */; };
 		A80A30501C7385EC00DE996D /* chatengieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A304F1C7385EC00DE996D /* chatengieTests.swift */; };
-		A80A305A1C73983F00DE996D /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A30591C73983F00DE996D /* models.swift */; };
+		A80A305A1C73983F00DE996D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A30591C73983F00DE996D /* Models.swift */; };
 		A80A305D1C739BCC00DE996D /* ChatApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A305C1C739BCC00DE996D /* ChatApiProtocol.swift */; };
 		A80A305F1C739BDC00DE996D /* EngieApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A305E1C739BDC00DE996D /* EngieApiClient.swift */; };
 		A80A30611C739C3F00DE996D /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A30601C739C3F00DE996D /* Errors.swift */; };
 		A80A30621C73A96C00DE996D /* EngieApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A305E1C739BDC00DE996D /* EngieApiClient.swift */; };
 		A80A30631C73A97500DE996D /* ChatApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A305C1C739BCC00DE996D /* ChatApiProtocol.swift */; };
 		A80A30641C73A97900DE996D /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A30601C739C3F00DE996D /* Errors.swift */; };
+		A80A30661C73AA5200DE996D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A30651C73AA5200DE996D /* WelcomeViewController.swift */; };
+		A80A30691C73AB7900DE996D /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A30681C73AB7900DE996D /* Alerts.swift */; };
+		A80A306C1C73AC4900DE996D /* KeyboardTrackerBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A306A1C73AC4900DE996D /* KeyboardTrackerBehavior.swift */; };
+		A80A306D1C73AC4900DE996D /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A306B1C73AC4900DE996D /* Notifications.swift */; };
+		A80A306F1C73AEE000DE996D /* ShowThreadsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A306E1C73AEE000DE996D /* ShowThreadsController.swift */; };
+		A80A30711C73AF0800DE996D /* ThreadsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A30701C73AF0800DE996D /* ThreadsController.swift */; };
+		A80A30731C73B16100DE996D /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A30721C73B16100DE996D /* ChatController.swift */; };
+		A80A30751C73B17700DE996D /* ShowChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A30741C73B17700DE996D /* ShowChatController.swift */; };
+		A8189A2D1C73BD9B00F4D699 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8189A2C1C73BD9B00F4D699 /* Actions.swift */; };
+		A8189A321C73CE7A00F4D699 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8189A311C73CE7A00F4D699 /* String.swift */; };
 		DE940447D02E3DE3935BFD86 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A273EDE1AE49088436A46FC7 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,10 +55,20 @@
 		A80A304D1C7385EC00DE996D /* chatengieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chatengieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80A304F1C7385EC00DE996D /* chatengieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatengieTests.swift; sourceTree = "<group>"; };
 		A80A30511C7385EC00DE996D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A80A30591C73983F00DE996D /* models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
+		A80A30591C73983F00DE996D /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A80A305C1C739BCC00DE996D /* ChatApiProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatApiProtocol.swift; sourceTree = "<group>"; };
 		A80A305E1C739BDC00DE996D /* EngieApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngieApiClient.swift; sourceTree = "<group>"; };
 		A80A30601C739C3F00DE996D /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		A80A30651C73AA5200DE996D /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		A80A30681C73AB7900DE996D /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		A80A306A1C73AC4900DE996D /* KeyboardTrackerBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardTrackerBehavior.swift; sourceTree = "<group>"; };
+		A80A306B1C73AC4900DE996D /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		A80A306E1C73AEE000DE996D /* ShowThreadsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowThreadsController.swift; sourceTree = "<group>"; };
+		A80A30701C73AF0800DE996D /* ThreadsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadsController.swift; sourceTree = "<group>"; };
+		A80A30721C73B16100DE996D /* ChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		A80A30741C73B17700DE996D /* ShowChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowChatController.swift; sourceTree = "<group>"; };
+		A8189A2C1C73BD9B00F4D699 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		A8189A311C73CE7A00F4D699 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C9263FA206B99300AAAF9CD0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D157C26C1031F725BA6A7658 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,9 +132,12 @@
 		A80A30321C737A8900DE996D /* chatengie */ = {
 			isa = PBXGroup;
 			children = (
+				A80A30671C73AB6C00DE996D /* Utils */,
 				A80A30461C737C0E00DE996D /* Business */,
 				A80A30451C737C0800DE996D /* Presentation */,
 				A80A30331C737A8900DE996D /* AppDelegate.swift */,
+				A8189A2C1C73BD9B00F4D699 /* Actions.swift */,
+				A80A306B1C73AC4900DE996D /* Notifications.swift */,
 				A80A30351C737A8900DE996D /* ViewController.swift */,
 				A80A30371C737A8900DE996D /* Main.storyboard */,
 				A80A303A1C737A8900DE996D /* Assets.xcassets */,
@@ -127,6 +150,11 @@
 		A80A30451C737C0800DE996D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A80A30651C73AA5200DE996D /* WelcomeViewController.swift */,
+				A80A306E1C73AEE000DE996D /* ShowThreadsController.swift */,
+				A80A30701C73AF0800DE996D /* ThreadsController.swift */,
+				A80A30721C73B16100DE996D /* ChatController.swift */,
+				A80A30741C73B17700DE996D /* ShowChatController.swift */,
 			);
 			name = Presentation;
 			sourceTree = "<group>";
@@ -134,8 +162,8 @@
 		A80A30461C737C0E00DE996D /* Business */ = {
 			isa = PBXGroup;
 			children = (
-				A80A305B1C739BC200DE996D /* api */,
-				A80A30591C73983F00DE996D /* models.swift */,
+				A80A305B1C739BC200DE996D /* Api */,
+				A80A30591C73983F00DE996D /* Models.swift */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -149,14 +177,32 @@
 			path = chatengieTests;
 			sourceTree = "<group>";
 		};
-		A80A305B1C739BC200DE996D /* api */ = {
+		A80A305B1C739BC200DE996D /* Api */ = {
 			isa = PBXGroup;
 			children = (
 				A80A305C1C739BCC00DE996D /* ChatApiProtocol.swift */,
 				A80A305E1C739BDC00DE996D /* EngieApiClient.swift */,
 				A80A30601C739C3F00DE996D /* Errors.swift */,
 			);
-			name = api;
+			name = Api;
+			sourceTree = "<group>";
+		};
+		A80A30671C73AB6C00DE996D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A8189A301C73CE4900F4D699 /* Extensions */,
+				A80A306A1C73AC4900DE996D /* KeyboardTrackerBehavior.swift */,
+				A80A30681C73AB7900DE996D /* Alerts.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		A8189A301C73CE4900F4D699 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A8189A311C73CE7A00F4D699 /* String.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,12 +357,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8189A2D1C73BD9B00F4D699 /* Actions.swift in Sources */,
+				A80A306D1C73AC4900DE996D /* Notifications.swift in Sources */,
+				A8189A321C73CE7A00F4D699 /* String.swift in Sources */,
 				A80A305F1C739BDC00DE996D /* EngieApiClient.swift in Sources */,
 				A80A30361C737A8900DE996D /* ViewController.swift in Sources */,
+				A80A306F1C73AEE000DE996D /* ShowThreadsController.swift in Sources */,
+				A80A30691C73AB7900DE996D /* Alerts.swift in Sources */,
 				A80A30341C737A8900DE996D /* AppDelegate.swift in Sources */,
+				A80A30751C73B17700DE996D /* ShowChatController.swift in Sources */,
 				A80A305D1C739BCC00DE996D /* ChatApiProtocol.swift in Sources */,
-				A80A305A1C73983F00DE996D /* models.swift in Sources */,
+				A80A30731C73B16100DE996D /* ChatController.swift in Sources */,
+				A80A305A1C73983F00DE996D /* Models.swift in Sources */,
+				A80A306C1C73AC4900DE996D /* KeyboardTrackerBehavior.swift in Sources */,
+				A80A30711C73AF0800DE996D /* ThreadsController.swift in Sources */,
 				A80A30611C739C3F00DE996D /* Errors.swift in Sources */,
+				A80A30661C73AA5200DE996D /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
