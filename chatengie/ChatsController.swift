@@ -25,10 +25,6 @@ class ChatsController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if Actions.APP_MODE == .Debug {
-            self.fldFriendName.text = "yaron"
-        }
-        
         self.observers.append(NotificationManager.instance.listenFor(.ChatSelectedByUser, triggers: {
             notification in
             self.onChatSelectedByUser(notification.userInfo!["chat"] as! Chat)

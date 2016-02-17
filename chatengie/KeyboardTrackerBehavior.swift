@@ -23,6 +23,7 @@ class KeyboardTrackerBehavior: NSObject {
     
     private var initialViewHeight: CGFloat!
     private var initialViewY: CGFloat!
+    private var tapRecognizer: UIGestureRecognizer!
     
     var keyboardWillShowCallback: () -> Void = {
         () -> Void in
@@ -43,13 +44,17 @@ class KeyboardTrackerBehavior: NSObject {
         Selector("keyboardDidHide:"): UIKeyboardDidHideNotification,
     ]
     
+    func dismissKeyboard() {
+        getResponder()?.resignFirstResponder()
+    }
+    
     init(_ viewToMove: UIView, elementsSettings: [UIResponder:CGFloat?]) {
-        self.viewToMove = viewToMove
-
         self.elementsSettings = elementsSettings
+        self.viewToMove = viewToMove
+        super.init()
         self.initialViewHeight = self.viewToMove.frame.height
         self.initialViewY = self.viewToMove.frame.origin.y
-        
+        self.tapRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
     }
     
     private func unsubscribeFromKeyboardNotifications() {
@@ -60,6 +65,7 @@ class KeyboardTrackerBehavior: NSObject {
                 object: nil
             )
         }
+        viewToMove.removeGestureRecognizer(tapRecognizer)
     }
     
     private func subscribeToKeyboardNotifications() {
@@ -71,6 +77,7 @@ class KeyboardTrackerBehavior: NSObject {
                 object: nil
             )
         }
+        viewToMove.addGestureRecognizer(tapRecognizer)
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
@@ -90,19 +97,14 @@ class KeyboardTrackerBehavior: NSObject {
         let keyboardAnimationCurve = userInfo![UIKeyboardAnimationCurveUserInfoKey] // of CGRect
         return keyboardAnimationCurve?.integerValue
     }
-
-    func changeResponder() {
-        
-    }
     
-    func getResponder() -> Int? {
-        let offset: Int? = nil
+    func getResponder() -> UIResponder? {
         for (element, _) in self.elementsSettings {
             if element.isFirstResponder() {
-                return offset
+                return element
             }
         }
-        return offset
+        return nil
     }
     
     func shrinkToKeyboardSize(notification: NSNotification, animated: Bool = true) {

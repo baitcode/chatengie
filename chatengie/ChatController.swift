@@ -9,11 +9,12 @@
 import UIKit
 import SwiftSpinner
 
-class ChatController: UIViewController, UITableViewDataSource {
+class ChatController: UIViewController, UITableViewDataSource, UITextViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var barNavigationItem: UINavigationItem!
-    @IBOutlet weak var fldMessage: UITextView!
+    @IBOutlet weak var fldMessage: UITextField!
+
     
     var observers: [AnyObject] = []
     var actions: Actions = Actions.sharedInstance
@@ -24,7 +25,9 @@ class ChatController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         self.keyboradTracker = KeyboardTrackerBehavior(
             self.view,
-            elementsSettings: [:]
+            elementsSettings: [
+                self.fldMessage: 0
+            ]
         )
         self.tableView.dataSource = self
         
@@ -36,6 +39,10 @@ class ChatController: UIViewController, UITableViewDataSource {
                 }
             }
         }))
+    }
+    
+    @IBAction func textFieldDoneEditing(sender: AnyObject) {
+        sender.resignFirstResponder()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -79,6 +86,8 @@ class ChatController: UIViewController, UITableViewDataSource {
             text: self.fldMessage.text!
         ).then({
             _ in
+            self.fldMessage.resignFirstResponder()
+            self.fldMessage.text = ""
         }).always({
             SwiftSpinner.hide()
         }).error({
