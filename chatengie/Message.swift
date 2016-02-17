@@ -10,12 +10,12 @@ import Foundation
 
 
 class Message {
-    var id: Int
+    var id: Int?
     var from: User
     var to: User
     var message: String
-    
-    init(id: Int, to: User, from: User, message: String){
+
+    init(id: Int? = nil, to: User, from: User, message: String){
         self.id = id
         self.from = from
         self.to = to

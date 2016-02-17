@@ -37,8 +37,7 @@ class WelcomeViewController: UIViewController {
             SwiftSpinner.hide()
         }).error({
             error in
-            let actionError = error as! ActionError
-            UAlerts.show(.Error, at: self, withText: actionError.message)
+            UAlerts.show(.Error, at: self, withText: getErrorMessage(from: error))
         })
     }
     

@@ -33,6 +33,7 @@
 		A88005141C7403ED006D28E0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88005131C7403ED006D28E0 /* Message.swift */; };
 		A88005181C741668006D28E0 /* ChatStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88005171C741668006D28E0 /* ChatStorage.swift */; };
 		A880051A1C741686006D28E0 /* MessageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88005191C741686006D28E0 /* MessageLoader.swift */; };
+		A880051C1C7504D7006D28E0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880051B1C7504D7006D28E0 /* Utils.swift */; };
 		DE940447D02E3DE3935BFD86 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A273EDE1AE49088436A46FC7 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		A88005131C7403ED006D28E0 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A88005171C741668006D28E0 /* ChatStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatStorage.swift; sourceTree = "<group>"; };
 		A88005191C741686006D28E0 /* MessageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLoader.swift; sourceTree = "<group>"; };
+		A880051B1C7504D7006D28E0 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C9263FA206B99300AAAF9CD0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D157C26C1031F725BA6A7658 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +162,7 @@
 				A80A30701C73AF0800DE996D /* ChatsController.swift */,
 				A80A30721C73B16100DE996D /* ChatController.swift */,
 				A80A30741C73B17700DE996D /* MessagesListController.swift */,
+				A880051B1C7504D7006D28E0 /* Utils.swift */,
 			);
 			name = Presentation;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				A80A305F1C739BDC00DE996D /* EngieApiClient.swift in Sources */,
 				A80A306F1C73AEE000DE996D /* ChatsListController.swift in Sources */,
 				A88005141C7403ED006D28E0 /* Message.swift in Sources */,
+				A880051C1C7504D7006D28E0 /* Utils.swift in Sources */,
 				A80A30691C73AB7900DE996D /* Alerts.swift in Sources */,
 				A80A30341C737A8900DE996D /* AppDelegate.swift in Sources */,
 				A80A30751C73B17700DE996D /* MessagesListController.swift in Sources */,

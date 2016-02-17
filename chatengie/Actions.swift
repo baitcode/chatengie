@@ -67,7 +67,7 @@ class Actions {
     }
     
     func startChat(with name: String) -> Promise<AnyObject?> {
-        return Promise<AnyObject?>(resolvers: {
+        return Promise<User>(resolvers: {
             fulfill, reject in
 
             let cleanName = name.trim()
@@ -82,12 +82,18 @@ class Actions {
             }
             
             self.chatStorage.create(Chat(from: currentUser!, to: user))
-            
             NotificationManager.instance.notify(.ChatListChanged)
-            self.messageLoader.load(forUser: user).then({
-                data in
-                fulfill(data)
-            })
+            fulfill(user)
+        }).then({
+            user in
+            return self.messageLoader.load(forUser: user)
+        })
+    }
+    
+    func sendMessage(from from: User, to: User, text: String) -> Promise<Message> {
+        return self.api.sendMessage(from: from.name, to: to.name, message: text).then({
+            data in
+            return Promise(Message(to: to, from: from, message: text))
         })
     }
         

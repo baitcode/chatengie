@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import SwiftSpinner
 
 class ChatController: UIViewController {
     
     @IBOutlet weak var barNavigationItem: UINavigationItem!
+    @IBOutlet weak var fldMessage: UITextView!
+    
     var currentChat: Chat?
     var keyboradTracker: KeyboardTrackerBehavior!
+    var actions: Actions = Actions.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +40,23 @@ class ChatController: UIViewController {
     
     func initializeBeforeSegueWith(chat: Chat) {
         self.currentChat = chat
+    }
+ 
+    @IBAction func btnSendPressed(sender: AnyObject) {
+        SwiftSpinner.show("Connecting to satellite")
+        
+        Actions.instance?.sendMessage(
+            from: (self.currentChat?.from)!,
+            to: (self.currentChat?.to)!,
+            text: self.fldMessage.text!
+        ).then({
+            _ in
+        }).always({
+            SwiftSpinner.hide()
+        }).error({
+            error in
+            UAlerts.show(.Error, at: self, withText: getErrorMessage(from: error))
+        })
     }
     
 }
