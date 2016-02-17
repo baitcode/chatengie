@@ -6,10 +6,11 @@
 //  Copyright © 2016 engie. All rights reserved.
 //
 
+import Foundation
 import PromiseKit
 
 
 protocol IChatApiClient {
-    func getMessages(from user: String, startingWith: Int) -> Promise<[String:AnyObject]>
+    func getMessages(forUser forUser: String, startingWith: Int) -> Promise<[String:AnyObject]>
     func sendMessage(from fromUser: String, to toUser: String, message: String) -> Promise<[String:AnyObject]>
 }

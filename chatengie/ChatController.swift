@@ -1,5 +1,5 @@
 //
-//  ChatController.swift
+//  ChatController
 //  chatengie
 //
 //  Created by Ilia Batiy on 16/02/16.
@@ -11,7 +11,7 @@ import UIKit
 class ChatController: UIViewController {
     
     @IBOutlet weak var barNavigationItem: UINavigationItem!
-    var currentThread: Thread?
+//    var currentThread: Thread?
     var keyboradTracker: KeyboardTrackerBehavior!
     
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class ChatController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationItem.title = self.currentThread?.getName()
+//        self.navigationItem.title = self.currentThread?.getName()
         self.keyboradTracker.startTracking()
     }
     
@@ -34,9 +34,9 @@ class ChatController: UIViewController {
         self.keyboradTracker.stopTracking()
     }
     
-    func initializeBeforeSegueWith(thread: Thread) {
-        self.currentThread = thread
-    }
+//    func initializeBeforeSegueWith(thread: Thread) {
+//        self.currentThread = thread
+//    }
     
 }
 

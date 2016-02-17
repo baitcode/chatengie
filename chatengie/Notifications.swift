@@ -11,8 +11,9 @@ import Foundation
 
 enum NotificationType: String {
     case UserLoggedIn = "UserLoggedIn"
-    case ThreadListChanged = "ThreadListChanged"
-    case ThreadSelectedByUser = "SelectedThreadChanged"
+    case ChatListChanged = "ThreadListChanged"
+    case ChatSelectedByUser = "SelectedThreadChanged"
+    case ChatUpdated = "ChatUpdated"
 }
 
 

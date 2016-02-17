@@ -1,5 +1,5 @@
 //
-//  ShowChatController.swift
+//  MessagesListController
 //  chatengie
 //
 //  Created by Ilia Batiy on 16/02/16.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class ShowChatController: UITableViewController {
+class MessagesListController: UITableViewController {
     
 }

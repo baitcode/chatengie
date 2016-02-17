@@ -64,7 +64,7 @@
         <!--Threads VIew Controller-->
         <scene sceneID="QLi-Qw-g0Y">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="95b-sc-GKv" userLabel="Threads VIew Controller" customClass="ThreadsController" customModule="chatengie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="95b-sc-GKv" userLabel="Threads VIew Controller" customClass="ChatsController" customModule="chatengie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bwv-tW-Ohk"/>
                         <viewControllerLayoutGuide type="bottom" id="RdG-F8-pv4"/>
@@ -204,13 +204,13 @@
         <!--Threads List-->
         <scene sceneID="zhK-JF-tOt">
             <objects>
-                <tableViewController id="aH6-DJ-gR7" userLabel="Threads List" customClass="ShowThreadsController" customModule="chatengie" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="aH6-DJ-gR7" userLabel="Threads List" customClass="ChatsListController" customModule="chatengie" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="F9y-AD-fe8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="441"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThreadCell" id="Odr-7q-pUb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" id="Odr-7q-pUb">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Odr-7q-pUb" id="6Kr-3D-lCH">
@@ -229,10 +229,10 @@
             </objects>
             <point key="canvasLocation" x="2563" y="1153.5"/>
         </scene>
-        <!--Show Chat Controller-->
+        <!--Messages List Controller-->
         <scene sceneID="Wdx-3E-Gqm">
             <objects>
-                <tableViewController id="Fh6-uz-j9E" customClass="ShowChatController" customModule="chatengie" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Fh6-uz-j9E" customClass="MessagesListController" customModule="chatengie" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BLd-aS-Gue">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="442"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

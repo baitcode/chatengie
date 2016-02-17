@@ -1,5 +1,5 @@
 //
-//  ShowThreadsController.swift
+//  ChatsListController
 //  chatengie
 //
 //  Created by Ilia Batiy on 16/02/16.
@@ -9,11 +9,10 @@
 import UIKit
 
 
-class ShowThreadsController: UITableViewController {
+class ChatsListController: UITableViewController {
     
     var observers: [AnyObject] = []
     var actions = Actions.sharedInstance
-    var selectedThread: Thread?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +20,7 @@ class ShowThreadsController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidDisappear(animated)
-        self.observers.append(NotificationManager.instance.listenFor(.ThreadListChanged, triggers: {
+        self.observers.append(NotificationManager.instance.listenFor(.ChatListChanged, triggers: {
             _ in
             self.refresh()
         }))
@@ -41,21 +40,22 @@ class ShowThreadsController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.actions.threads.count
+        return self.actions.chatStorage.getChats().count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let thread = self.actions.threads[indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier("ThreadCell", forIndexPath: indexPath)
-        cell.textLabel?.text = thread.getName()
+        let chat = self.actions.chatStorage.getChats()[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("ChatCell", forIndexPath: indexPath)
+        cell.textLabel?.text = chat.to.name
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let chat = self.actions.chatStorage.getChats()[indexPath.row]
         NotificationManager.instance.notify(
-            .ThreadSelectedByUser,
+            .ChatSelectedByUser,
             data: [
-                "thread": self.actions.threads[indexPath.row]
+                "chat": chat
             ]
         )
         

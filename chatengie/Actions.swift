@@ -25,17 +25,28 @@ enum AppMode: String {
     case Prod = "PROD"
 }
 
+
+let config = [
+    "endpoint": "http://api.beta.engie.co.il/test/chat/"
+]
+
+
 class Actions {
     
     static let APP_MODE: AppMode = .Debug
-    static var instance: Actions? = Actions()
+    static var instance: Actions?
     
-    var api = EngieApiClient(endpoint: "http://api.beta.engie.co.il/test/chat/")
-    
+    var api: IChatApiClient!
+
     var currentUser: User?
+    var chatStorage: IChatStorage
+    var messageLoader: IMessageLoader
     
-    var threads: [Thread] = []
-    var threadIndex: [String:Thread] = [:]
+    init(config: [String:AnyObject]){
+        self.api = EngieApiClient(endpoint: config["endpoint"] as! String)
+        self.chatStorage = ChatsStorage()
+        self.messageLoader = MessageLoader(api: self.api, chatsStorage: self.chatStorage)
+    }
     
     func logIn(name: String) -> Promise<User> {
         return Promise<User>(resolvers: {
@@ -46,6 +57,8 @@ class Actions {
                 return reject(ActionError("Username can not be empty"))
             }
 
+            self.messageLoader.registerUser(User(name: cleanName))
+
             self.currentUser = User(name: cleanName)
             
             NotificationManager.instance.notify(.UserLoggedIn)
@@ -53,49 +66,34 @@ class Actions {
         })
     }
     
-    func startThread(with name: String) -> Promise<Thread> {
-        return Promise<Thread>(resolvers: {
+    func startChat(with name: String) -> Promise<AnyObject?> {
+        return Promise<AnyObject?>(resolvers: {
             fulfill, reject in
 
             let cleanName = name.trim()
-            
+    
             if cleanName.isEmpty {
                 return reject(ActionError("Username can not be empty"))
             }
-            
-            if let _ = self.threadIndex[cleanName] {
+
+            let user = User(name: cleanName)
+            if !self.messageLoader.registerUser(user) {
                 return reject(ActionError("Thread already exists"))
             }
             
-            self.api.getMessages(from: name).then({
+            self.chatStorage.create(Chat(from: currentUser!, to: user))
+            
+            NotificationManager.instance.notify(.ChatListChanged)
+            self.messageLoader.load(forUser: user).then({
                 data in
-                print(data)
-            }).error({
-                error in
-                switch (error) {
-                case ChatApiError.BadRequest(let message):
-                    // Notify developers.
-                    reject(ActionError("There might be a problem with data you've sent."))
-                case ChatApiError.ConnectionError(let message):
-                    reject(ActionError("Network unreachable, please check your connection and try again."))
-                default:
-                    // Notify developers.
-                    reject(ActionError("Client is out of order."))
-                }
+                fulfill(data)
             })
-            
-            let thread = Thread(with: User(name: cleanName), messages: [])
-            self.threadIndex[cleanName] = thread
-            self.threads.append(thread)
-            
-            NotificationManager.instance.notify(.ThreadListChanged)
-            fulfill(thread)
         })
     }
         
     class var sharedInstance: Actions {
         if Actions.instance == nil {
-            Actions.instance = Actions()
+            Actions.instance = Actions(config: config)
         }
         return Actions.instance!
     }

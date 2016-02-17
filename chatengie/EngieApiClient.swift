@@ -19,18 +19,23 @@ class EngieApiClient: IChatApiClient {
     }
     
     private func call(path: String, parameters: [String:AnyObject]) -> Promise<[String:AnyObject]> {
-        let request = Alamofire.request(.GET, "\(self.endpoint)\(path)", parameters: parameters)
+        let fullPath = "\(self.endpoint)\(path)"
+        let request = Alamofire.request(.GET, fullPath, parameters: parameters)
+        
         return Promise<[String:AnyObject]>(resolvers: {
             fulfill, reject in
             request.responseJSON(completionHandler: {
                 response in
+                
+                print("REQUEST - \(response.response?.statusCode) \(response.request?.URLString)")
+                
                 switch response.result {
-                case .Success:
-                    let responseData = response.result.value as! [String:AnyObject]
-                    
-                    if let code = responseData["error"] as? Int {
+                case .Success(let JSON):
+                    let responseData = JSON as! [String:AnyObject]
+                    print(responseData)
+                    if let code = responseData["code"] as? Int {
                         if code == 200 {
-                            fulfill(responseData)
+                            return fulfill(responseData)
                         }
                     }
                     var errorMessage = "Unknow error"
@@ -45,11 +50,11 @@ class EngieApiClient: IChatApiClient {
         })
     }
     
-    func getMessages(from user: String, startingWith: Int = 0) -> Promise<[String:AnyObject]> {
+    func getMessages(forUser forUser: String, startingWith: Int = 0) -> Promise<[String:AnyObject]> {
         return self.call(
             "getMessages",
             parameters: [
-                "user": user,
+                "user": forUser,
                 "lastMessageReceived": startingWith
             ]
         )

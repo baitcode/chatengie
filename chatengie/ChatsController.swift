@@ -1,5 +1,5 @@
 //
-//  ThreadsController.swift
+//  MainChatsController
 //  chatengie
 //
 //  Created by Ilia Batiy on 16/02/16.
@@ -10,12 +10,12 @@ import UIKit
 import SwiftSpinner
 import PromiseKit
 
-class ThreadsController: UIViewController {
+class ChatsController: UIViewController {
     
     @IBOutlet weak var fldFriendName: UITextField!
     let actions = Actions.sharedInstance
     var observers: [AnyObject] = []
-    var selectedThread: Thread?
+    var selectedChat: Chat?
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -29,9 +29,9 @@ class ThreadsController: UIViewController {
             self.fldFriendName.text = "yaron"
         }
         
-        self.observers.append(NotificationManager.instance.listenFor(.ThreadSelectedByUser, triggers: {
+        self.observers.append(NotificationManager.instance.listenFor(.ChatSelectedByUser, triggers: {
             notification in
-            self.onThreadSelectedByUser(notification.userInfo!["thread"] as! Thread)
+            self.onChatSelectedByUser(notification.userInfo!["chat"] as! Chat)
         }))
     }
     
@@ -43,7 +43,7 @@ class ThreadsController: UIViewController {
     @IBAction func btnAddFriendPressed(sender: AnyObject) {
         SwiftSpinner.show("Ur friends are belong to us")
         
-        self.actions.startThread(with: fldFriendName.text!).then({
+        self.actions.startChat(with: fldFriendName.text!).then({
             _ in
         }).always({
             SwiftSpinner.hide()
@@ -54,15 +54,15 @@ class ThreadsController: UIViewController {
         })
     }
     
-    func onThreadSelectedByUser(thread: Thread) {
-        self.selectedThread = thread
+    func onChatSelectedByUser(chat: Chat) {
+        self.selectedChat = chat
         self.performSegueWithIdentifier("showChat", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showChat" {
             let controller = segue.destinationViewController as! ChatController
-            controller.initializeBeforeSegueWith(self.selectedThread!)
+//            controller.initializeBeforeSegueWith(self.selectedChat!)
         }
     }
     
