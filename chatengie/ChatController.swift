@@ -11,7 +11,7 @@ import UIKit
 class ChatController: UIViewController {
     
     @IBOutlet weak var barNavigationItem: UINavigationItem!
-//    var currentThread: Thread?
+    var currentChat: Chat?
     var keyboradTracker: KeyboardTrackerBehavior!
     
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class ChatController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-//        self.navigationItem.title = self.currentThread?.getName()
+        self.navigationItem.title = self.currentChat!.to.name
         self.keyboradTracker.startTracking()
     }
     
@@ -34,9 +34,9 @@ class ChatController: UIViewController {
         self.keyboradTracker.stopTracking()
     }
     
-//    func initializeBeforeSegueWith(thread: Thread) {
-//        self.currentThread = thread
-//    }
+    func initializeBeforeSegueWith(chat: Chat) {
+        self.currentChat = chat
+    }
     
 }
 

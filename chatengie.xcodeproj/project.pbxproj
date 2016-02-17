@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A80A30341C737A8900DE996D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A30331C737A8900DE996D /* AppDelegate.swift */; };
-		A80A30361C737A8900DE996D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A30351C737A8900DE996D /* ViewController.swift */; };
 		A80A30391C737A8900DE996D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A80A30371C737A8900DE996D /* Main.storyboard */; };
 		A80A303B1C737A8900DE996D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80A303A1C737A8900DE996D /* Assets.xcassets */; };
 		A80A303E1C737A8900DE996D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A80A303C1C737A8900DE996D /* LaunchScreen.storyboard */; };
 		A80A30501C7385EC00DE996D /* chatengieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A304F1C7385EC00DE996D /* chatengieTests.swift */; };
-		A80A305A1C73983F00DE996D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A30591C73983F00DE996D /* Models.swift */; };
 		A80A305D1C739BCC00DE996D /* ChatApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A305C1C739BCC00DE996D /* ChatApiProtocol.swift */; };
 		A80A305F1C739BDC00DE996D /* EngieApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A305E1C739BDC00DE996D /* EngieApiClient.swift */; };
 		A80A30611C739C3F00DE996D /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A30601C739C3F00DE996D /* Errors.swift */; };
@@ -52,7 +50,6 @@
 		A273EDE1AE49088436A46FC7 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80A30301C737A8900DE996D /* chatengie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatengie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80A30331C737A8900DE996D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A80A30351C737A8900DE996D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A80A30381C737A8900DE996D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A80A303A1C737A8900DE996D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A80A303D1C737A8900DE996D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,7 +57,6 @@
 		A80A304D1C7385EC00DE996D /* chatengieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chatengieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80A304F1C7385EC00DE996D /* chatengieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatengieTests.swift; sourceTree = "<group>"; };
 		A80A30511C7385EC00DE996D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A80A30591C73983F00DE996D /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A80A305C1C739BCC00DE996D /* ChatApiProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatApiProtocol.swift; sourceTree = "<group>"; };
 		A80A305E1C739BDC00DE996D /* EngieApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngieApiClient.swift; sourceTree = "<group>"; };
 		A80A30601C739C3F00DE996D /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
@@ -148,7 +144,6 @@
 				A80A30331C737A8900DE996D /* AppDelegate.swift */,
 				A8189A2C1C73BD9B00F4D699 /* Actions.swift */,
 				A80A306B1C73AC4900DE996D /* Notifications.swift */,
-				A80A30351C737A8900DE996D /* ViewController.swift */,
 				A80A30371C737A8900DE996D /* Main.storyboard */,
 				A80A303A1C737A8900DE996D /* Assets.xcassets */,
 				A80A303C1C737A8900DE996D /* LaunchScreen.storyboard */,
@@ -174,7 +169,6 @@
 			children = (
 				A880050E1C7403BB006D28E0 /* Models */,
 				A80A305B1C739BC200DE996D /* Api */,
-				A80A30591C73983F00DE996D /* Models.swift */,
 				A88005171C741668006D28E0 /* ChatStorage.swift */,
 				A88005191C741686006D28E0 /* MessageLoader.swift */,
 			);
@@ -386,7 +380,6 @@
 				A88005101C7403C6006D28E0 /* Chat.swift in Sources */,
 				A8189A321C73CE7A00F4D699 /* String.swift in Sources */,
 				A80A305F1C739BDC00DE996D /* EngieApiClient.swift in Sources */,
-				A80A30361C737A8900DE996D /* ViewController.swift in Sources */,
 				A80A306F1C73AEE000DE996D /* ChatsListController.swift in Sources */,
 				A88005141C7403ED006D28E0 /* Message.swift in Sources */,
 				A80A30691C73AB7900DE996D /* Alerts.swift in Sources */,
@@ -394,7 +387,6 @@
 				A80A30751C73B17700DE996D /* MessagesListController.swift in Sources */,
 				A80A305D1C739BCC00DE996D /* ChatApiProtocol.swift in Sources */,
 				A80A30731C73B16100DE996D /* ChatController.swift in Sources */,
-				A80A305A1C73983F00DE996D /* Models.swift in Sources */,
 				A880051A1C741686006D28E0 /* MessageLoader.swift in Sources */,
 				A80A306C1C73AC4900DE996D /* KeyboardTrackerBehavior.swift in Sources */,
 				A88005121C7403DE006D28E0 /* User.swift in Sources */,

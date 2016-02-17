@@ -62,7 +62,7 @@ class ChatsController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showChat" {
             let controller = segue.destinationViewController as! ChatController
-//            controller.initializeBeforeSegueWith(self.selectedChat!)
+            controller.initializeBeforeSegueWith(self.selectedChat!)
         }
     }
     
