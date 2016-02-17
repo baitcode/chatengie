@@ -51,7 +51,7 @@ class MessageLoader: IMessageLoader {
             for messageData in data["data"] as! [[String:AnyObject]] {
                 let fromName = messageData["fromUser"] as! String
                 let text = messageData["message"] as! String
-                let id = data["id"] as! Int
+                let id = messageData["id"] as! Int
                 
                 let message = Message(
                     id: id,
@@ -68,7 +68,7 @@ class MessageLoader: IMessageLoader {
                 }
             }
             self.usersLastSeenIds[user] = newLastSeenId
-            return Promise(true)
+            return Promise(newLastSeenId != lastSeenId)
         })
     }
     

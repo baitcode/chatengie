@@ -12,12 +12,29 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var actions = Actions.sharedInstance
     
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        application.setMinimumBackgroundFetchInterval(10)
+        
+        
         // Override point for customization after application launch.
         return true
+    }
+    
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        actions.fetchUsersData().then({
+            hasChanges in
+            if hasChanges {
+                completionHandler(.NewData)
+            } else {
+                completionHandler(.NoData)
+            }
+        }).error({
+            _ in
+            completionHandler(.Failed)
+        })
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -28,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        actions.stopFetchLoop()
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -36,6 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        actions.startFetchLoop()
     }
 
     func applicationWillTerminate(application: UIApplication) {

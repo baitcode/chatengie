@@ -31,7 +31,7 @@ let config = [
 ]
 
 
-class Actions {
+class Actions: NSObject {
     
     static let APP_MODE: AppMode = .Debug
     static var instance: Actions?
@@ -41,6 +41,7 @@ class Actions {
     var currentUser: User?
     var chatStorage: IChatStorage
     var messageLoader: IMessageLoader
+    var timer: NSTimer?
     
     init(config: [String:AnyObject]){
         self.api = EngieApiClient(endpoint: config["endpoint"] as! String)
@@ -90,11 +91,42 @@ class Actions {
         })
     }
     
-    func sendMessage(from from: User, to: User, text: String) -> Promise<Message> {
-        return self.api.sendMessage(from: from.name, to: to.name, message: text).then({
-            data in
-            return Promise(Message(to: to, from: from, message: text))
+    func sendMessage(from from: User, to: User, text: String) -> Promise<AnyObject?> {
+        return self.api.sendMessage(from: from.name, to: to.name, message: text)
+            .then({
+                data in
+                return self.messageLoader.load(forUser: to)
+            })
+    }
+    
+    func fetchUsersData() -> Promise<Bool> {
+        return when(self.messageLoader.load()).thenInBackground({
+            results in
+            return Promise(results.filter({ hasChanges in hasChanges }).count > 0)
         })
+    }
+    
+    func fetchUsersDataForTimer() {
+        self.fetchUsersData()
+    }
+    
+    
+    func startFetchLoop() {
+        if let timer = self.timer {
+            timer.invalidate()
+        }
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(
+            10.0,
+            target: self,
+            selector: "fetchUsersDataForTimer",
+            userInfo: nil,
+            repeats: true
+        )
+        self.timer?.fire()
+    }
+    
+    func stopFetchLoop() {
+        self.timer?.invalidate()
     }
         
     class var sharedInstance: Actions {

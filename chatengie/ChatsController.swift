@@ -40,6 +40,17 @@ class ChatsController: UIViewController {
         NotificationManager.instance.silence(self.observers)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showChat" {
+            let controller = segue.destinationViewController as! ChatController
+            controller.initializeBeforeSegueWith(self.selectedChat!)
+        }
+    }
+
+    @IBAction func textFieldDoneEditing(sender: AnyObject) {
+        sender.resignFirstResponder()
+    }
+    
     @IBAction func btnAddFriendPressed(sender: AnyObject) {
         SwiftSpinner.show("Ur friends are belong to us")
         
@@ -58,11 +69,5 @@ class ChatsController: UIViewController {
         self.performSegueWithIdentifier("showChat", sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showChat" {
-            let controller = segue.destinationViewController as! ChatController
-            controller.initializeBeforeSegueWith(self.selectedChat!)
-        }
-    }
     
 }

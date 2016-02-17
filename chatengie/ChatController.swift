@@ -9,14 +9,16 @@
 import UIKit
 import SwiftSpinner
 
-class ChatController: UIViewController {
+class ChatController: UIViewController, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var barNavigationItem: UINavigationItem!
     @IBOutlet weak var fldMessage: UITextView!
     
+    var observers: [AnyObject] = []
+    var actions: Actions = Actions.sharedInstance
     var currentChat: Chat?
     var keyboradTracker: KeyboardTrackerBehavior!
-    var actions: Actions = Actions.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,16 @@ class ChatController: UIViewController {
             self.view,
             elementsSettings: [:]
         )
+        self.tableView.dataSource = self
+        
+        self.observers.append(NotificationManager.instance.listenFor(.ChatUpdated, triggers: {
+            notification in
+            if let chat = notification.userInfo!["chat"] as? Chat {
+                if self.currentChat == chat {
+                    self.tableView.reloadData()
+                }
+            }
+        }))
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -36,6 +48,22 @@ class ChatController: UIViewController {
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         self.keyboradTracker.stopTracking()
+        NotificationManager.instance.silence(self.observers)
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("message", forIndexPath: indexPath)
+        let message = self.currentChat?.messages[indexPath.row]
+        cell.textLabel?.text = message?.message
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.currentChat?.messages.count ?? 0
     }
     
     func initializeBeforeSegueWith(chat: Chat) {

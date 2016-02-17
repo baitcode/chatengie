@@ -62,7 +62,7 @@ class EngieApiClient: IChatApiClient {
     
     func sendMessage(from fromUser: String, to toUser: String, message: String) -> Promise<[String:AnyObject]> {
         return self.call(
-            "getMessages",
+            "sendMessage",
             parameters: [
                 "fromUser": fromUser,
                 "toUser": toUser,
