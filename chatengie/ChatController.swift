@@ -59,18 +59,36 @@ class ChatController: UIViewController, UITableViewDataSource, UITextViewDelegat
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        let parts = self.currentChat?.splitByUser()
+        return parts?.count ?? 1
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let parts = self.currentChat?.splitByUser()
+        return parts![section].user.name
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("message", forIndexPath: indexPath)
-        let message = self.currentChat?.messages[indexPath.row]
-        cell.textLabel?.text = message?.message
+        
+        if indexPath.section % 2 == 1 {
+            cell.textLabel?.textAlignment = .Right
+            cell.textLabel?.textColor = UIColor.redColor()
+        } else {
+            cell.textLabel?.textAlignment = .Left
+        }
+        
+        if let parts = self.currentChat?.splitByUser() {
+            let message = parts[indexPath.section].messages[indexPath.row]
+            cell.textLabel?.text = message.message
+        }
+        
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.currentChat?.messages.count ?? 0
+        let parts = self.currentChat?.splitByUser()
+        return parts?[section].messages.count ?? 0
     }
     
     func initializeBeforeSegueWith(chat: Chat) {

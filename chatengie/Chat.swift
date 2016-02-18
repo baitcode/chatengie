@@ -8,6 +8,13 @@
 
 import Foundation
 
+
+struct ChatPart {
+    var user: User
+    var messages: [Message]
+}
+
+
 class Chat: Hashable {
     var to: User
     var from: User
@@ -34,6 +41,33 @@ class Chat: Hashable {
     
     func addMessage(message: Message) {
         self.messages.append(message)
+    }
+    
+    func splitByUser() -> [ChatPart] {
+        
+        var chatParts: [ChatPart] = []
+        
+        var currentChatPart: ChatPart? = nil
+        
+        let sortedMessages = self.messages//.sort({ a, b in a.id < b.id })
+        
+        for var message in sortedMessages {
+            if currentChatPart == nil {
+                currentChatPart = ChatPart(user: message.from, messages: [message])
+            } else {
+                if currentChatPart!.user != message.from {
+                    chatParts.append(currentChatPart!)
+                    currentChatPart = ChatPart(user: message.from, messages: [message])
+                } else {
+                    currentChatPart?.messages.append(message)
+                }
+            }
+        }
+        if let part = currentChatPart {
+            chatParts.append(part)
+        }
+    
+        return chatParts
     }
     
 }
